@@ -27,6 +27,34 @@
         p {
             margin: 1.5em 0;
         }
+        #google_translate_element {
+            position: fixed;
+            top: 10px;  /* 距離頁面頂端 10px */
+            left: 10px; /* 距離頁面左側 10px */
+            z-index: 9999; /* 保證它不會被其他元素遮蓋 */
+        }
+        #social-share {
+            position: fixed;
+            top: 30px;
+            left: 10px;
+            margin-top: 10px;
+        }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share {
+            color: #4267B2;
+        }
+        #social-share a#line-share {
+            color: #00C300;
+        }
+        #social-share a#twitter-share {
+            color: #1DA1F2;
+        }
     </style>
 </head>
 <body>
@@ -37,22 +65,56 @@
 
 <h3>這，跟某些政客鼓勵生育的嘴臉，有什麼不同？</h3>
 
-<p>他們一個孩子也沒有，卻整天對著鏡頭，對著人民，對著鏡頭前的媽媽們說：「要多生，國家才有希望。」<br>
-    他們說生育是責任，是愛國，是對未來的投資。</p>
-<p style="border-bottom: 2px solid #ccc;">但他們自己選擇不生——因為他們知道，生小孩會讓人生崩潰。會變窮，會變累，會被綁死在這個沒有保障的社會結構裡。</p>
+<p>他們一個孩子也沒有，卻整天對著鏡頭，對著人民，對著鏡頭前的媽媽們說：「要多生，國家才有希望。」</p>
+<p style="border-bottom: 2px solid #ccc;">他們說生育是責任、是愛國、是對未來的投資，但他們自己選擇不生——因為他們知道，生小孩會讓人生崩潰。會變窮，會變累，會被綁死在這個沒有保障的社會結構裡。</p>
 
-<h3>他們沒說出口的話是：『這種苦，我不吃，但你們去吃，因為我們需要有人養老、繳稅、當兵、上班。』也就是說，毒販靠癮君子過活，而政客靠你的小孩延命。</h3>
+<h3>他們沒說出口的話是：「這種苦，我不吃，但你們去吃，因為我們需要有人養老、繳稅、當兵、上班。」也就是說，毒販靠癮君子過活，而政客靠你的小孩延命。</h3>
 
 <p>你的小孩將成為他們年金制度的補丁，是他們勞保破產時的救命浮木，是他們不作為的代價承擔者。他們給你的，是幾張補助券、一堆口號、和一整座正在下沉的社會船艙。</p>
 
 <p style="border-bottom: 2px solid #ccc;">當你掙扎著在月薪三萬中養兩個小孩時，他們卻在空調舒適的國會裡，開著關於「國民責任」的會議，舉手表決，再上個節目繼續說教。</p>
-
-<p><strong>總歸一句話：「不吸毒的毒販和不生育的政客，同樣冷血、同樣精明、同樣殘忍。」</strong></p>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- 社群分享按鈕區塊 -->
+    <div id="social-share" style="margin-top: 20px;">
+        <a id="fb-share" href="#" target="_blank" style="text-decoration: none; color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+        <span> | </span>
+        <a id="line-share" href="#" target="_blank" style="text-decoration: none; color: #00C300; font-weight: bold;">分享到 Line</a>
+        <span> | </span>
+        <a id="twitter-share" href="#" target="_blank" style="text-decoration: none; color: #1DA1F2; font-weight: bold;">分享到 X</a>
+    </div>
+</div>
+    <script>
+        // 自動抓取當前頁面的 URL
+        var currentUrl = window.location.href;
+        // Facebook 分享
+        document.getElementById("fb-share").href =
+            "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+        // Line 分享
+        document.getElementById("line-share").href =
+            "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+        // X (Twitter) 分享
+        document.getElementById("twitter-share").href =
+            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+    </script>
+        <h4>總歸一句話：「不吸毒的毒販和不生育的政客，同樣冷血、同樣精明、同樣殘忍。」</h4>
 <span style="display:block; text-align: center;"><strong style="color:green;">（註：下方的插入影片就是我國某位不生育的政客的例子以及許多網友對她的評價）</strong></span>
 <span style="display:block; text-align: center;">
-<video width="400" height="640" controls>
+<video style="background-color: #cc0000;" width="400" height="640" controls>
     <source src="hypocritical_president.mp4" type="video/mp4">
 </video>
+</span>
     <br>
   <table style="width: 100%; border: 2px solid #333; border-collapse: collapse; text-align: center;">
     <thead>
@@ -76,6 +138,5 @@
     </tr>
     </tbody>
   </table>
-</span>
 </body>
 </html>
